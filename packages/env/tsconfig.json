@@ -1,0 +1,6 @@
+{
+  "extends": "@ai-studio-gallery/config/tsconfig.base.json",
+  "compilerOptions": {
+    "strictNullChecks": true
+  }
+}
