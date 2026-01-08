@@ -1,7 +1,12 @@
 import type { ConvexQueryClient } from "@convex-dev/react-query";
 import type { QueryClient } from "@tanstack/react-query";
 
-import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from "@tanstack/react-router";
+import {
+  createRootRouteWithContext,
+  HeadContent,
+  Outlet,
+  Scripts,
+} from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { ConvexProvider } from "convex/react";
 
@@ -26,13 +31,27 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "My App",
+        title: "AI Studio Gallery - Create Stunning Images with Nano Banana",
+      },
+      {
+        name: "description",
+        content:
+          "Transform your imagination into stunning visuals with AI-powered image generation. Create, collect, and share amazing artwork using Google's Nano Banana models.",
       },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
       },
     ],
   }),
@@ -44,7 +63,7 @@ function RootDocument() {
   const { convexQueryClient } = Route.useRouteContext();
   return (
     <ConvexProvider client={convexQueryClient.convexClient}>
-      <html lang="en" className="dark">
+      <html className="dark" lang="en">
         <head>
           <HeadContent />
         </head>

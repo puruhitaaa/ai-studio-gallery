@@ -9,6 +9,8 @@
     "dev:setup": "convex dev --configure --until-success"
   },
   "dependencies": {
+    "@convex-dev/rate-limiter": "^0.3.2",
+    "@google/genai": "^1.34.0",
     "convex": "catalog:",
     "dotenv": "catalog:",
     "zod": "catalog:"
